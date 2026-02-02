@@ -39,3 +39,17 @@ elif num2>num3 and num2>num1:
     print("second number is greatest")
 else:
     print("third number is greatest")
+
+
+# 5.Check whether the quadratic equation has real roots or imaginary roots. Display the roots.
+import math
+a,b,c = map(int, input("enter value of coefficients of quadratic equation\n").split())
+d=b**2-4*a*c
+r1=(-b + math.sqrt(d))/2*a
+r2=(-b - math.sqrt(d))/2*a
+if d >=0 :
+    print(f"root are real\nroots of given quadratic equation are {r1,r2}")
+
+else:
+    print(f"roots are imaginary\nroots of given quadratic equation are {r1,r2}")
+
