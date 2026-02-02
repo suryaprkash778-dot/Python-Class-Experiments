@@ -53,3 +53,11 @@ if d >=0 :
 else:
     print(f"roots are imaginary\nroots of given quadratic equation are {r1,r2}")
 
+
+
+#6.Find whether a given year is a leap year or not.
+year = int(input("enter a year\n"))
+if year%4==0 and (year%100!=0 or year%400==0) :
+    print(f"{year} is a leap year")
+else:
+    print(f"{year} is not a leap year")
