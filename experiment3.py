@@ -38,6 +38,21 @@ if is_prime:
 else:
     print("num is not prime")
 
+#5.	Check whether given number is palindrome or not.
+num = int(input("Enter a number: "))
+temp = num
+rev = 0
+
+while temp > 0:
+    digit = temp % 10
+    rev = rev * 10 + digit
+    temp = temp // 10
+
+if num == rev:
+    print(num, "is a palindrome.")
+else:
+    print(num, "is not a palindrome.")
+
 
 
 #6.	Write a program to print sum of digits.
@@ -67,3 +82,34 @@ print(string.upper())
 num6 = int(input("enter  number"))
 for num in range(11):
     print(f"5 * {num} = {5*num}")
+
+
+#10.	Write a program to print the following pattern
+#123454321
+#1234 *4321
+#123  * * 321
+#12   * * *  21
+#1    * * * *   1
+n = 5 
+for i in range(n):
+    for j in range(1, n - i + 1):
+        print(j, end="")
+    for j in range(i):
+        print(" *", end="")
+    for j in range(n - i, 0, -1):
+        print(j, end="")
+    print() 
+
+
+#11.	Write a program to print the sum of the following series
+#1+ ½ + 1/3 + ¼ +….+1/n
+
+n = int(input("Enter the value of n: "))
+sum_series = 0
+
+for i in range(1, n + 1):
+    sum_series += 1 / i
+
+print("Sum of the series up to 1/", n, "is:", sum_series)
+
+
