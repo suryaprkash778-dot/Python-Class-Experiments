@@ -1,3 +1,28 @@
+#1 Input number of values
+n = int(input("Enter how many values: "))
+
+values = [int(input(f"Enter value {i+1} (0-3): ")) for i in range(n)]
+
+count_0 = values.count(0)
+count_1 = values.count(1)
+count_2 = values.count(2)
+count_3 = values.count(3)
+
+print("0:", count_0)
+print("1:", count_1)
+print("2:", count_2)
+print("3:", count_3)
+
+
+#2 Create a tuple with n numeric values and Find the average of all values
+numbers = (10, 20, 30, 40, 50)   # Example tuple
+
+average = sum(numbers) / len(numbers)
+
+print("Numbers:", numbers)
+print("Average:", average)
+
+
 #3 WAP to input a list of scores for N students in a list data type. Find the score of the runner-up and print the output.
 
 n = int(input("Enter number of students: "))
