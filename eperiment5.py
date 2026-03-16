@@ -106,6 +106,74 @@ for name, details in movies.items():
     if details["director"].lower() == director_name.lower():
         print(name)
 
+#6.	Create a contact book where users can store, search, update, and delete contacts. Use dictionary for storing contacts.
+contacts = {}
+
+while True:
+    print("\n--- Contact Book ---")
+    print("1. Add Contact")
+    print("2. Search Contact")
+    print("3. Update Contact")
+    print("4. Delete Contact")
+    print("5. Display All Contacts")
+    print("6. Exit")
+
+    choice = input("Enter your choice (1-6): ")
+
+    if choice == "1":
+        name = input("Enter name: ")
+        phone = input("Enter phone: ")
+        email = input("Enter email: ")
+        if name in contacts:
+            print("Contact already exists.")
+        else:
+            contacts[name] = {"phone": phone, "email": email}
+            print("Contact added successfully.")
+
+    elif choice == "2":
+        name = input("Enter name to search: ")
+        if name in contacts:
+            print(f"Name: {name}, Phone: {contacts[name]['phone']}, Email: {contacts[name]['email']}")
+        else:
+            print("Contact not found.")
+
+    elif choice == "3":
+        name = input("Enter name to update: ")
+        if name in contacts:
+            phone = input("Enter new phone (leave blank to keep current): ")
+            email = input("Enter new email (leave blank to keep current): ")
+            if phone:
+                contacts[name]["phone"] = phone
+            if email:
+                contacts[name]["email"] = email
+            print("Contact updated successfully.")
+        else:
+            print("Contact not found.")
+
+    elif choice == "4":
+        name = input("Enter name to delete: ")
+        if name in contacts:
+            del contacts[name]
+            print("Contact deleted successfully.")
+        else:
+            print("Contact not found.")
+
+    elif choice == "5":
+        if contacts:
+            print("\n--- All Contacts ---")
+            for name, info in contacts.items():
+                print(f"Name: {name}, Phone: {info['phone']}, Email: {info['email']}")
+        else:
+            print("No contacts available.")
+
+    elif choice == "6":
+        print("Exiting Contact Book. Goodbye!")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")
+
+
 
 #7 Create a Todo list Manager where users can add, view, and remove tasks. Use List for storing tasks.
 
